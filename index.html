@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DouWeatherCard Demo</title>
+    <script src="./douWeather_core.js" defer></script>
+    <script src="./douWeather_icons.js" defer></script>
+    <script src="./docs-assets/prism.js" defer></script>
+    <link rel="stylesheet" href="./docs-assets/prism.css">
+    <style>
+        header {
+            display: flex;
+            align-content: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        * {
+            font-family: source sans pro, -apple-system, BlinkMacSystemFont, segoe ui, roboto, oxygen, ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
+        }
+
+        .h1 {
+            font-size: 40px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #fe9a8b 0, #fd868c 50px, #f9748f 100px, #f78ca0 120px);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+        }
+
+        .h2 {
+            font-size: 22px;
+        }
+
+        p {
+            margin: 5px;
+        }
+
+        a {
+            color: #6c757d !important;
+        }
+
+        p.content {
+            text-indent: 2em;
+        }
+
+        .description {
+            color: #969696;
+        }
+
+        .main-container {
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        .content-block {
+            color: #666666;
+            padding: 5px 10px;
+        }
+
+
+        @media screen and (max-width: 1260px) {
+            .main-container {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .main-container {
+                width: 100%;
+            }
+        }
+
+        main {
+            width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            width: 100%;
+            margin: 0;
+        }
+
+        .demo-block {
+            min-height: 180px;
+        }
+
+        footer {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <header>
+            <p class="h1">DouWeather</p>
+            <p class="description">开箱即用，组件化的前端天气组件</p>
+        </header>
+        <main>
+            <div class="content-block">
+                <p class="h2">Ⅰ. 一些屁话</p>
+                <p class="content">
+                    ⚠在任何情况下你都不应该将<a href="https://github.com/daidr/DouWeather-temp"
+                        target="_blank">DouWeather-temp</a>仓库中所提供脚本用于生产环境！该仓库中的代码结构混乱、难以长期维护，之后会抽空将代码重构并在<a
+                        href="https://github.com/daidr/DouWeather" target="_blank">DouWeather</a>仓库持续更新（画饼）
+                </p>
+                <p class="content">DouWeather目前的特性：
+                <ul>
+                    <li>有着<del>优雅</del>粗糙的过渡动画</li>
+                    <li>适配暗黑模式</li>
+                    <li>天气卡片组件化</li>
+                    <li>天气卡片布局支持自适应</li>
+                    <li><del>比较生动的</del>数据展示</li>
+                    <li>全浏览器原生js实现</li>
+                </ul>
+                </p>
+                <p class="content">DouWeather目前的缺陷：
+                <ul>
+                    <li>比较有限的样式修改</li>
+                    <li>代码结构混乱，难以维护</li>
+                </ul>
+                </p>
+                <p class="content">一些饼（还未实现）：
+                <ul>
+                    <li>自定义数据源</li>
+                    <li>模块化的数据展示</li>
+                    <li>自定义图标包</li>
+                    <li>自定义样式</li>
+                    <li>更多交互操作</li>
+                </ul>
+                </p>
+
+            </div>
+
+            <div class="content-block">
+                <p class="h2">Ⅱ. 如何开始</p>
+                <p class="content">使用DouWeather，你只需要引入两个js文件，但是注意需要加上defer属性。</p>
+                <p class="content">其中douWeather_core.js包含卡片核心逻辑和基本样式，douWeather_icons.js包含常用天气图标。</p>
+                <pre><code class="language-markup">&lt;script src="/yourpath/douWeather_core.js" defer&gt;&lt;/script&gt;
+&lt;script src="/yourpath/douWeather_icons.js" defer&gt;&lt;/script&gt;</code></pre>
+            </div>
+
+            <div class="content-block">
+                <p class="h2">Ⅲ. 开箱即用</p>
+                <p class="content">DouWeather默认预定义了一组天气组件的样式，你无需配置任何内容，即可在你的网页中快速插入一个天气卡片组件。</p>
+                <pre><code class="language-markup" id="demo1-code">&lt;douweather-card location="101210101"&gt;&lt;/douweather-card&gt;</code></pre>
+                <button onclick="html('demo1')">运行</button>
+                <div class="demo-block" id="demo1"></div>
+                <br>
+                <p class="content">你可以修改 <code>type</code> 属性来使用不同样式的天气卡片（默认值normal）</p>
+                <pre><code class="language-markup" id="demo2-code">&lt;douweather-card location="101210101" type="normal"&gt;&lt;/douweather-card&gt;</code></pre>
+                <button onclick="html('demo2')">运行</button>
+                <div class="demo-block" id="demo2"></div>
+                <br>
+                <pre><code class="language-markup" id="demo3-code">&lt;douweather-card location="101210101" type="small"&gt;&lt;/douweather-card&gt;</code></pre>
+                <button onclick="html('demo3')">运行</button>
+                <div class="demo-block" id="demo3"></div>
+                <br>
+                <pre><code class="language-markup" id="demo4-code">&lt;douweather-card location="101210101" type="medium"&gt;&lt;/douweather-card&gt;</code></pre>
+                <button onclick="html('demo4')">运行</button>
+                <div class="demo-block" id="demo4"></div>
+                <br>
+                <pre><code class="language-markup" id="demo5-code">&lt;douweather-card location="101210101" type="detail"&gt;&lt;/douweather-card&gt;</code></pre>
+                <button onclick="html('demo5')">运行</button>
+                <div class="demo-block" id="demo5"></div>
+                <br>
+                <p class="content">卡片支持暗黑模式，你也可以通过 <code>theme</code> 属性来锁定卡片样式（允许值 “light” “dark”）</p>
+                <pre><code class="language-markup" id="demo6-code">&lt;douweather-card location="101210101" type="detail" theme="dark"&gt;&lt;/douweather-card&gt;</code></pre>
+                <button onclick="html('demo6')">运行</button>
+                <div class="demo-block" id="demo6"></div>
+                <br>
+                <p class="content">你可以动态修改卡片的属性，卡片会自动刷新，下面的例子会将杭州天气切换到北京天气</p>
+                <pre><code class="language-javascript" id="demo7-code">document.querySelector("#demo7").setAttribute("location","101210101"); //杭州</code></pre>
+                <pre><code class="language-javascript" id="demo8-code">document.querySelector("#demo7").setAttribute("location","101010100"); //北京</code></pre>
+                <button onclick="js('demo7')">杭州</button>
+                <button onclick="js('demo8')">北京</button>
+                <div class="demo-block">
+                    <douweather-card location="101210101" type="detail" id="demo7"></douweather-card>
+                </div>
+                <br>
+            </div>
+            <script>
+                function html(demo) {
+                    let code = document.querySelector(`#${demo}-code`).innerText;
+                    console.log(code);
+                    document.querySelector(`#${demo}`).innerHTML = code;
+                }
+
+                function js(demo) {
+                    let code = document.querySelector(`#${demo}-code`).innerText;
+                    try {
+                        eval(code);
+                    } catch (error) {
+
+                    }
+                }
+            </script>
+        </main>
+        <footer>
+            <p>Coded By <a href="https://daidr.me/" target="_blank">戴兜</a> With ❤️ @ 2021</p>
+        </footer>
+    </div>
+</body>
+
+</html>

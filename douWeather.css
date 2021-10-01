@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "windArrows";
+  src: url("./assets/font/DWICON_windArrows.woff2") format("woff2"),
+    url("./assets/font/DWICON_windArrows.woff") format("woff");
+}
