@@ -182,11 +182,14 @@
                 <button onclick="html('demo6')">运行</button>
                 <div class="demo-block" id="demo6"></div>
                 <br>
-                <p class="content">你可以动态修改卡片的属性，卡片会自动刷新，下面的例子会将杭州天气切换到北京天气</p>
+                <p class="content">
+                    你可以动态修改卡片的属性，卡片会自动刷新，下面的例子会将杭州天气切换到北京天气。同时你可以修改location属性的值为auto，此时卡片会通过你的ip自动显示对应位置的天气。</p>
                 <pre><code class="language-javascript" id="demo7-code">document.querySelector("#demo7").setAttribute("location","101210101"); //杭州</code></pre>
                 <pre><code class="language-javascript" id="demo8-code">document.querySelector("#demo7").setAttribute("location","101010100"); //北京</code></pre>
+                <pre><code class="language-javascript" id="demo9-code">document.querySelector("#demo7").setAttribute("location","auto"); //自动</code></pre>
                 <button onclick="js('demo7')">杭州</button>
                 <button onclick="js('demo8')">北京</button>
+                <button onclick="js('demo9')">自动识别</button>
                 <div class="demo-block">
                     <douweather-card location="101210101" type="detail" id="demo7"></douweather-card>
                 </div>
