@@ -554,8 +554,13 @@
                 this.shadowRoot.querySelector(".text-1")
                     .textContent = `未加载完成的天气卡片`;
             } else {
-                this.shadowRoot.querySelector(".text-1")
-                    .textContent = `天气卡片，显示的是${text}的天气。当前天气${WeatherList[this.weatherData.current.weather]}，早上平均温度${this.weatherData.temperature.value[0].from}℃，夜晚平均温度${this.weatherData.temperature.value[0].to}℃。体感温度${this.weatherData.current.feelsLike.value}℃。当前为${this.windDirection[0]}风${this.windLevel}级，空气湿度约为${this.weatherData.current.humidity.value}%`;
+                if (this.dw_type == "small") {
+                    this.shadowRoot.querySelector(".text-1")
+                        .textContent = `天气卡片，显示的是${text}的天气。当前天气${WeatherList[this.weatherData.current.weather]}，早上平均温度${this.weatherData.temperature.value[0].from}℃，夜晚平均温度${this.weatherData.temperature.value[0].to}℃。体感温度${this.weatherData.current.feelsLike.value}℃。`;
+                } else {
+                    this.shadowRoot.querySelector(".text-1")
+                        .textContent = `天气卡片，显示的是${text}的天气。当前天气${WeatherList[this.weatherData.current.weather]}，早上平均温度${this.weatherData.temperature.value[0].from}℃，夜晚平均温度${this.weatherData.temperature.value[0].to}℃。体感温度${this.weatherData.current.feelsLike.value}℃。当前为${this.windDirection[0]}风${this.windLevel}级，空气湿度约为${this.weatherData.current.humidity.value}%`;
+                }
             }
 
 
