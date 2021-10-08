@@ -75,7 +75,7 @@
             // 针对卡片类型简单修改一些布局
             if (type == "small") {
                 this.style.width = this.style.maxWidth = this.style.minWidth = "180px";
-                shadow.querySelector(".wrapper").style.display = "none";
+                //shadow.querySelector(".wrapper").style.display = "none";
                 shadow.querySelector(".detail-container").style.display = "none";
             } else if (type == "medium") {
                 shadow.querySelector(".container").style.width = "290px";
@@ -94,9 +94,9 @@
             const showErrorMessage = (el) => {
                 el.querySelector(".error-block").style.display = "flex";
                 el.querySelector(".error-block").style.opacity = "1";
-                el.querySelector(".main-block").style.display = "none";
-                el.querySelector(".wrapper").style.display = "none";
-                el.querySelector(".detail-container").style.display = "none";
+                //el.querySelector(".main-block").style.display = "none";
+                //el.querySelector(".wrapper").style.display = "none";
+                //el.querySelector(".detail-container").style.display = "none";
             }
 
             fetch(`https://api.daidr.me/apis/weather?location=${location}`)
