@@ -183,7 +183,7 @@
                 <div class="demo-block" id="demo6"></div>
                 <br>
                 <p class="content">
-                    你可以动态修改卡片的属性，卡片会自动刷新，下面的例子会将杭州天气切换到北京天气。同时你可以修改location属性的值为auto，此时卡片会通过你的ip自动显示对应位置的天气。(目前DouWeather的后端接口还不支持ipv6的地理位置检索)
+                    你可以动态修改卡片的属性，卡片会自动刷新，下面的例子会将杭州天气切换到北京天气。同时你可以修改location属性的值为auto，此时卡片会通过你的ip自动显示对应位置的天气。目前DouWeather的后端接口已经支持ipv6的地理位置检索，同时支持对6to4、teredo、isatap进行位置检索。（不支持移动数据网络ipv6，因为移动数据网络具有漫游性，一般为初次接入地ip，无法定位到具体位置）
                 </p>
                 <pre><code class="language-javascript" id="demo7-code">document.querySelector("#demo7").setAttribute("location","101210101"); //杭州</code></pre>
                 <pre><code class="language-javascript" id="demo8-code">document.querySelector("#demo7").setAttribute("location","101010100"); //北京</code></pre>
